@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EquipmentsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
 });
 
 Route::apiResource('/category', CategoryController::class);
+Route::apiResource('/equipments', EquipmentsController::class);
 
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
